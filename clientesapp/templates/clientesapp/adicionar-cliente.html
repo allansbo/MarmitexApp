@@ -1,0 +1,24 @@
+{% extends 'base1.html' %}
+
+{% block title %}Sistema Marmitex - Cadastrar novo cliente{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+            <h3>
+            Adicionar novo cliente
+            </h3>
+            <form action="" method="POST" class="add-client-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-success" value="Cadastrar">
+            </form>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+</div>
+{% endblock %}
