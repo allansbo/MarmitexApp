@@ -1,4 +1,5 @@
 {% extends 'base1.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}Sistema Marmitex - Cadastrar novo cliente{% endblock %}
 
@@ -13,7 +14,7 @@
             </h3>
             <form action="" method="POST" class="add-client-form">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {{ form|crispy }}
                 <input type="submit" class="btn btn-success" value="Cadastrar">
             </form>
 		</div>

@@ -45,6 +45,13 @@
         <a href="adicionar-cliente/" class="btn btn-success btn-sm active add-cliente" role="button" aria-pressed="true">
             Novo Cliente <span class="material-icons material-add ">add</span>
         </a>
+        {% if messages %}
+        <div class="alert alert-success" role="alert">
+            {% for message in messages %}
+            <li{% if messages.tags %}class="alert alert-{{message.tags}}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </div>
+        {% endif %}
         <div class="card mb-4">
             <div class="card-header"><i class="fas fa-table mr-1"></i>Cadastro de Clientes</div>
             <div class="card-body">
@@ -69,10 +76,10 @@
                                 <td>l</td>
                                 <td>m</td>
                                 <td class="d-flex justify-content-end">
-                                    <a href="/editar-cliente/{{i.id}}" class="btn btn-info btn-sm active" role="button" aria-pressed="true">
+                                    <a href="editar-cliente/{{i.id}}" class="btn btn-info btn-sm active" role="button" aria-pressed="true">
                                         <span class="material-icons">edit</span>
                                     </a>
-                                    <a href="#" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">
+                                    <a href="deletar-cliente/{{i.id}}" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">
                                         <span class="material-icons">clear</span>
                                     </a>
                                 </td>
@@ -95,5 +102,26 @@
         </div>
     </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="excluir-cliente" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Ação de Exclusão</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja excluir o registro?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a class="btn btn-danger" href="" type="button" aria-pressed="true" data-dismiss="modal">Deletar</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
 <!-- FIM DO CONTEÚDO -->
 {% endblock %}
