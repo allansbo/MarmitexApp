@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'marmitexapp',
     'usuariosapp',
     'crispy_forms',
+    'accounts',
 ]
 
 MIDDLEWARE = [

@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib import messages
 
-from .models import Client
+from .models import Client, Phone
 from .forms import clientAddForm
 
 
@@ -11,7 +11,8 @@ from .forms import clientAddForm
 @login_required()
 def clientslist(request):
     listaclientes = Client.objects.all()
-    return render(request, 'clientesapp/clientes.html', {'listaclientes': listaclientes})
+    listatelefone = Phone.objects.all()
+    return render(request, 'clientesapp/clientes.html', {'listaclientes': listaclientes, 'listatelefone': listatelefone})
 
 
 @login_required()

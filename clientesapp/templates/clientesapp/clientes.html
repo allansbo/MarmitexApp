@@ -69,11 +69,12 @@
                         </thead>
                         <tbody>
                         {% for i in listaclientes%}
+                        {% for j in listatelefone%}
                             <tr>
                                 <td>{{i.client_name}}</td>
                                 <td>{{i.client_email}}</td>
                                 <td>k</td>
-                                <td>l</td>
+                                <td>({{j.phone_ddd}}) {{j.phone_number}}</td>
                                 <td>m</td>
                                 <td class="d-flex justify-content-end">
                                     <a href="editar-cliente/{{i.id}}" class="btn btn-info btn-sm active" role="button" aria-pressed="true">
@@ -84,6 +85,7 @@
                                     </a>
                                 </td>
                             </tr>
+                        {% endfor %}
                         {% endfor %}
                         </tbody>
                         <tfoot>
@@ -102,26 +104,5 @@
         </div>
     </div>
 </div>
-<!-- Modal -->
-<div class="modal fade" id="excluir-cliente" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Ação de Exclusão</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Tem certeza que deseja excluir o registro?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <a class="btn btn-danger" href="" type="button" aria-pressed="true" data-dismiss="modal">Deletar</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal -->
 <!-- FIM DO CONTEÚDO -->
 {% endblock %}
