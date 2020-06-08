@@ -42,102 +42,18 @@
                 </div>
             </div>
         </div>
+        <a href="adicionar-cliente/" class="btn btn-success btn-sm active add-cliente" role="button" aria-pressed="true">
+            Novo Cliente <span class="material-icons material-add ">add</span>
+        </a>
+        {% if messages %}
+        <div class="alert alert-success" role="alert">
+            {% for message in messages %}
+            <li{% if messages.tags %}class="alert alert-{{message.tags}}"{% endif %}>{{ message }}</li>
+            {% endfor %}
         </div>
+        {% endif %}
         <div class="card mb-4">
-            <div class="card-header"><i class="fas fa-table mr-1"></i>Cadastro de clientes</div>
-            <div class="card-body">
-                	<div class="row">
-                        <div class="col-md-12">
-                            <div class="col-2 add-div">
-                                <a id="add-cliente" href="#">
-                                    <button type="button" class="btn btn-info">
-                                        Novo Cliente
-                                        <span class="material-icons material-add ">add</span>
-                                    </button>
-                                </a>
-                            </div>
-                            <div class="col-9 search-div">
-                                <input class="form-control" type="text" id="searchbar" name="searchbar" placeholder="Buscar pelo nome do cliente">
-                                <span class="material-icons">search</span>
-                            </div>
-                        </div>
-                    </div>
-                <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Cras justo odio
-                        <div class="d-flex justify-content-end">
-                            <a href="#" class="badge badge-info"><span class="material-icons">edit</span></a>
-                            <a href="#" class="badge badge-danger"><span class="material-icons">clear</span></a>
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Dapibus ac facilisis in
-                        <div class="d-flex justify-content-end">
-                            <a href="#" class="badge badge-info"><span class="material-icons">edit</span></a>
-                            <a href="#" class="badge badge-danger"><span class="material-icons">clear</span></a>
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Morbi leo risus
-                        <div class="d-flex justify-content-end">
-                            <a href="#" class="badge badge-info"><span class="material-icons">edit</span></a>
-                            <a href="#" class="badge badge-danger"><span class="material-icons">clear</span></a>
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Morbi leo risus
-                        <div class="d-flex justify-content-end">
-                            <a href="#" class="badge badge-info"><span class="material-icons">edit</span></a>
-                            <a href="#" class="badge badge-danger"><span class="material-icons">clear</span></a>
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Morbi leo risus
-                        <div class="d-flex justify-content-end">
-                            <a href="#" class="badge badge-info"><span class="material-icons">edit</span></a>
-                            <a href="#" class="badge badge-danger"><span class="material-icons">clear</span></a>
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Cras justo odio
-                        <div class="d-flex justify-content-end">
-                            <a href="#" class="badge badge-info"><span class="material-icons">edit</span></a>
-                            <a href="#" class="badge badge-danger"><span class="material-icons">clear</span></a>
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Dapibus ac facilisis in
-                        <div class="d-flex justify-content-end">
-                            <a href="#" class="badge badge-info"><span class="material-icons">edit</span></a>
-                            <a href="#" class="badge badge-danger"><span class="material-icons">clear</span></a>
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Morbi leo risus
-                        <div class="d-flex justify-content-end">
-                            <a href="#" class="badge badge-info"><span class="material-icons">edit</span></a>
-                            <a href="#" class="badge badge-danger"><span class="material-icons">clear</span></a>
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Morbi leo risus
-                        <div class="d-flex justify-content-end">
-                            <a href="#" class="badge badge-info"><span class="material-icons">edit</span></a>
-                            <a href="#" class="badge badge-danger"><span class="material-icons">clear</span></a>
-                        </div>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Morbi leo risus
-                        <div class="d-flex justify-content-end">
-                            <a href="#" class="badge badge-info"><span class="material-icons">edit</span></a>
-                            <a href="#" class="badge badge-danger"><span class="material-icons">clear</span></a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="card mb-4">
-            <div class="card-header"><i class="fas fa-table mr-1"></i>Cadastro de clientes</div>
+            <div class="card-header"><i class="fas fa-table mr-1"></i>Cadastro de Clientes</div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered display tabela_pagina" id="tabela_pagina" width="100%" cellspacing="0">
@@ -152,246 +68,25 @@
                             </tr>
                         </thead>
                         <tbody>
+                        {% for i in listaclientes%}
+                        {% for j in listatelefone%}
                             <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
+                                <td>{{i.client_name}}</td>
+                                <td>{{i.client_email}}</td>
+                                <td>k</td>
+                                <td>({{j.phone_ddd}}) {{j.phone_number}}</td>
+                                <td>m</td>
+                                <td class="d-flex justify-content-end">
+                                    <a href="editar-cliente/{{i.id}}" class="btn btn-info btn-sm active" role="button" aria-pressed="true">
                                         <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
+                                    </a>
+                                    <a href="deletar-cliente/{{i.id}}" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">
                                         <span class="material-icons">clear</span>
-                                    </button>
+                                    </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Garrett Winters</td>
-                                <td>Accountant</td>
-                                <td>Tokyo</td>
-                                <td>63</td>
-                                <td>2011/07/25</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Ashton Cox</td>
-                                <td>Junior Technical Author</td>
-                                <td>San Francisco</td>
-                                <td>66</td>
-                                <td>2009/01/12</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Cedric Kelly</td>
-                                <td>Senior Javascript Developer</td>
-                                <td>Edinburgh</td>
-                                <td>22</td>
-                                <td>2012/03/29</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Airi Satou</td>
-                                <td>Accountant</td>
-                                <td>Tokyo</td>
-                                <td>33</td>
-                                <td>2008/11/28</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Brielle Williamson</td>
-                                <td>Integration Specialist</td>
-                                <td>New York</td>
-                                <td>61</td>
-                                <td>2012/12/02</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Herrod Chandler</td>
-                                <td>Sales Assistant</td>
-                                <td>San Francisco</td>
-                                <td>59</td>
-                                <td>2012/08/06</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Rhona Davidson</td>
-                                <td>Integration Specialist</td>
-                                <td>Tokyo</td>
-                                <td>55</td>
-                                <td>2010/10/14</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Colleen Hurst</td>
-                                <td>Javascript Developer</td>
-                                <td>San Francisco</td>
-                                <td>39</td>
-                                <td>2009/09/15</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sonya Frost</td>
-                                <td>Software Engineer</td>
-                                <td>Edinburgh</td>
-                                <td>23</td>
-                                <td>2008/12/13</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Jena Gaines</td>
-                                <td>Office Manager</td>
-                                <td>London</td>
-                                <td>30</td>
-                                <td>2008/12/19</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Quinn Flynn</td>
-                                <td>Support Lead</td>
-                                <td>Edinburgh</td>
-                                <td>22</td>
-                                <td>2013/03/03</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Jonas Alexander</td>
-                                <td>Developer</td>
-                                <td>San Francisco</td>
-                                <td>30</td>
-                                <td>2010/07/14</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Shad Decker</td>
-                                <td>Regional Director</td>
-                                <td>Edinburgh</td>
-                                <td>51</td>
-                                <td>2008/11/13</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Michael Bruce</td>
-                                <td>Javascript Developer</td>
-                                <td>Singapore</td>
-                                <td>29</td>
-                                <td>2011/06/27</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Donna Snider</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td style="text-align: center;">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex; margin-right: 3px;">
-                                        <span class="material-icons">edit</span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="display: inline-flex;">
-                                        <span class="material-icons">clear</span>
-                                    </button>
-                                </td>
-                            </tr>
+                        {% endfor %}
+                        {% endfor %}
                         </tbody>
                         <tfoot>
                             <tr>
@@ -400,7 +95,7 @@
                                 <th>Complemento</th>
                                 <th>Telefone</th>
                                 <th>Data de cadastro</th>
-                                <th>Ação</th>
+                                <th>Ações</th>
                             </tr>
                         </tfoot>
                     </table>

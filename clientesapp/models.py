@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Client(models.Model):
     client_name = models.CharField(max_length=255)
@@ -10,12 +11,15 @@ class Client(models.Model):
     def __str__(self):
         return self.client_name
 
+
 class Phone(models.Model):
+    phone_client = models.OneToOneField('Client', on_delete=models.CASCADE)
     phone_ddd = models.CharField(max_length=3)
     phone_number = models.CharField(max_length=10)
     phone_type = models.BooleanField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
 
 class Endereco(models.Model):
     endereco_cep = models.CharField(max_length=8)
@@ -28,6 +32,7 @@ class Endereco(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+
 class Fornecedor(models.Model):
     fornecedor_nome_empresa = models.CharField(max_length=255)
     fornecedor_cnpj = models.CharField(max_length=14)
@@ -38,4 +43,3 @@ class Fornecedor(models.Model):
 
     def __str__(self):
         return self.fornecedor_nome_empresa
-

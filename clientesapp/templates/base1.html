@@ -23,9 +23,20 @@
             }
             .btn-info {
                 display: inline-flex;
+                margin-right: 3px;
+            }
+            .btn-danger {
+                margin-right: 3px;
+            }
+            .add-cliente {
+                display: inline-flex;
+                margin-bottom: 10px;
             }
             .material-add {
                 margin-left: 3px;
+            }
+            .add-client-form {
+                margin-top: 20px;
             }
             .menu {
                 background: #1e1e1e;
@@ -86,10 +97,11 @@
     </head>
     <body>
         <!-- MENU -->
+        {% if user.is_authenticated %}
         <nav class="menu">
             <ul class="menu-lista">
                 <li class="menu-grupo">
-                    <a class="menu-link">
+                    <a class="menu-link" href="/">
                         <span style="display: flex !important; justify-content: center !important;">
                             Sistema Marmite
                             <span class="material-icons">
@@ -134,7 +146,23 @@
                         <span>Configurações</span>
                     </a>
                 </li>
-                </ul>
+                {% else %}
+                <li class="menu-grupo">
+                    <a href="/accounts/login" class="menu-link">
+                        <i class="fas fa-cogs"></i>
+                        <span>Entrar</span>
+                    </a>
+                </li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <li class="menu-grupo">
+                    <p>Olá, {{ user.username }}</p>
+                    <a href="/accounts/logout" class="menu-link">
+                        <i class="fas fa-cogs"></i>
+                        <span>Sair</span>
+                    </a>
+                </li>
+                {% endif %}
             </ul>
         </nav>
         {% block content %}
@@ -233,5 +261,7 @@
             } );
         </script>
         <!-- End DataTable jQuery -->
+    {% block extrajs %}
+    {% endblock extrajs %}
     </body>
 </html>
