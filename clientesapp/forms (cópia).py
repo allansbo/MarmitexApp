@@ -59,12 +59,7 @@ class clientAddForm(forms.Form):
                 css_class='form-row'
             ),
             'logradouro',
-            Row(
-                Column('complemento', css_class='form-group col-md-4 mb-0'),
-                Column('numero', css_class='form-group col-md-2 mb-0'),
-                Column('bairro', css_class='form-group col-md-6 mb-0'),
-                css_class='form-row'
-            ),
+            'complemento',
             Row(
                 Column('cidade', css_class='form-group col-md-4 mb-0'),
                 Column('estado', css_class='form-group col-md-3 mb-0'),

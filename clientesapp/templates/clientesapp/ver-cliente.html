@@ -1,0 +1,31 @@
+{% extends 'base1.html' %}
+
+{% block title %}Sistema Marmitex - Visualizar dados do cliente{% endblock %}
+
+{% block content %}
+<div class="container-fluid" style="margin-top: 3%;">
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+            <h3>
+            Visualizar dados do cliente
+            </h3>
+            <p><strong>Nome:</strong> {{vercliente.client_name}}</p>
+            <p><strong>E-mail:</strong> {{vercliente.client_email}}</p>
+            <p><strong>Telefone:</strong> ({{vercliente.client_phone.phone_ddd}}) {{vercliente.client_phone.phone_number}}</p>
+            <p><strong>CEP:</strong> {{vercliente.client_endereco.endereco_cep}}</p>
+            <p><strong>Logradouro:</strong> {{vercliente.client_endereco.endereco_logradouro}}</p>
+            <p><strong>Complemento:</strong> {{vercliente.client_endereco.endereco_complemento}}</p>
+            <p><strong>Número:</strong> {{vercliente.client_endereco.endereco_numero}}</p>
+            <p><strong>Bairro:</strong> {{vercliente.client_endereco.endereco_bairro}}</p>
+            <p><strong>Cidade: </strong> {{vercliente.client_endereco.endereco_cidade}} - {{vercliente.client_endereco.endereco_estado}}</p>
+		</div>
+		<div class="col-md-2">
+            <a href="/clientes" class="btn btn-success btn-sm active" role="button" aria-pressed="true">
+                Retornar
+            </a>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,311 @@
+{% extends 'base1.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Sistema Marmitex - Cadastrar novo cliente{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="content">
+
+       <div class="row mt-3 mb-3">
+          <div class="col-lg-12">
+             <h1 style="text-align: center;">Caixa aberto: 03/06/2020 | 18:33:33 </h1>
+          </div>
+       </div>
+       <div class="row mt-3">
+          <div class="col-xl-4 col-md-4">
+             <div class="card  text-white mb-4" style="background: 	#505050; ">
+                <div class="card-body">Capital Inicial</div>
+                <div class="card-footer" style="font-size: 30px;">
+                  R$200,00
+                </div>
+             </div>
+          </div>
+          <div class="col-xl-4 col-md-4">
+             <div class="card  text-white mb-4" style="background: 	#505050;">
+                <div class="card-body">
+                   Saldo Operacional
+                </div>
+                <div class="card-footer" style="font-size: 30px;">
+                   <span>
+                      R$200,00
+                   </span>
+                </div>
+             </div>
+          </div>
+          <div class="col-xl-4 col-md-4">
+             <div class="card  text-white mb-4" style="background: 	#505050;">
+                <div class="card-body">Saldo a transportar</div>
+                <div class="card-footer" style="font-size: 30px;">
+                   R$200,00
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="row mt-3">
+          <div class="col-lg-12">
+             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-entrada" style="display: inline-flex;"><span class="material-icons">
+             add
+             </span>Adicionar Entrada
+             </button>
+             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-saida" style="display: inline-flex;"><span class="material-icons">
+             add
+             </span>Adicionar Saída
+             </button>
+          </div>
+       </div>
+       <div class="row mt-3 mb-3">
+          <div class="col-lg-12">
+             <table class="display table table-hover table-striped">
+                <thead>
+                   <tr>
+                   <tr>
+                      <th colspan="7" style="    background: #2E8B57; color: white;">Entrada</th>
+                   </tr>
+                   <th scope="col">#</th>
+                   <th scope="col">Produto</th>
+                   <th scope="col">Quantidade</th>
+                   <th scope="col">Tipo de pagamento</th>
+                   <th scope="col">Valor</th>
+                   <th scope="col">Saldo</th>
+                   <th style="text-align: center;">Opções</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                      <td>Tiger Nixon</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>2011/04/25</td>
+                      <td style="text-align: center;">
+                  
+                         <button type="button" class="btn btn-danger" data-toggle="modal"
+                            data-target="#modal-exclusao" style="display: inline-flex;">
+                            <span class="material-icons">
+                             clear
+                            </span>
+                         </button>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>Garrett Winters</td>
+                      <td>Tokyo</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>2011/07/25</td>
+                      <td style="text-align: center;">
+                 
+                         <button type="button" class="btn btn-danger" data-toggle="modal"
+                            data-target="#modal-exclusao" style="display: inline-flex;"><span class="material-icons">
+                         clear
+                         </span></button>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>Ashton Cox</td>
+                      <td>San Francisco</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>2009/01/12</td>
+                      <td style="text-align: center;">
+          
+                         <button type="button" class="btn btn-danger" data-toggle="modal"
+                            data-target="#modal-exclusao" style="display: inline-flex;"><span class="material-icons">
+                         clear
+                         </span></button>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>Cedric Kelly</td>
+                      <td>Edinburgh</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>2012/03/29</td>
+                      <td style="text-align: center;">
+            
+                         <button type="button" class="btn btn-danger" data-toggle="modal"
+                            data-target="#modal-exclusao" style="display: inline-flex;"><span class="material-icons">
+                         clear
+                         </span></button>
+                      </td>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>
+
+       <div class="row mt-3 ">
+          <div class="col-lg-12">
+             <table class="display table table-hover table-striped ">
+                <thead>
+                   <tr>
+                   <tr>
+                      <th colspan="7" style="    background: #DC143C; color: white;">Saída</th>
+                   </tr>
+                   <th>#</th>
+                   <th>Classificação</th>
+                   <th scope="col">Valor</th>
+                   <th scope="col">Saldo</th>
+                   <th style="text-align: center;">Opções</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                      <td>Tiger Nixon</td>
+                      <td>Edinburgh</td>
+                      <td>61</td>
+                      <td>2011/04/25</td>
+                  
+                   
+                      <td style="text-align: center;">
+                   
+                         <button type="button" class="btn btn-danger" data-toggle="modal"
+                            data-target="#modal-exclusao" style="display: inline-flex;"><span class="material-icons">
+                         clear
+                         </span></button>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>Garrett Winters</td>
+                      <td>Tokyo</td>
+                      <td>63</td>
+                      <td>2011/07/25</td>
+                      <td style="text-align: center;">
+                    
+                         <button type="button" class="btn btn-danger" data-toggle="modal"
+                            data-target="#modal-exclusao" style="display: inline-flex;"><span class="material-icons">
+                         clear
+                         </span></button>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>Ashton Cox</td>
+                      <td>San Francisco</td>
+                      <td>66</td>
+                      <td>2009/01/12</td>
+                      <td style="text-align: center;">
+                
+                         <button type="button" class="btn btn-danger" data-toggle="modal"
+                            data-target="#modal-exclusao" style="display: inline-flex;"><span class="material-icons">
+                         clear
+                         </span></button>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>Cedric Kelly</td>
+                      <td>Edinburgh</td>
+                      <td>22</td>
+                      <td>2012/03/29</td>
+                      <td style="text-align: center;">
+               
+                         <button type="button" class="btn btn-danger" data-toggle="modal"
+                            data-target="#modal-exclusao" style="display: inline-flex;"><span class="material-icons">
+                         clear
+                         </span></button>
+                      </td>
+                   </tr>
+                </tbody>
+
+             </table>
+          </div>
+       </div>
+    </div>
+ </div>
+
+
+ <!-- Button trigger modal -->
+ <!-- Modal ADICIONAR ENTRADA-->
+ <div class="modal " id="modal-entrada" tabindex="-1" role="dialog" aria-labelledby="modal-entradalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+       <div class="modal-content">
+          <div class="modal-header">
+             <h5 class="modal-title" id="modal-entradalLabel">Adicionar entrada</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button>
+          </div>
+          <div class="modal-body">
+             <div class="form-group">
+                <div class="row">
+                   <div class="col-lg-12">
+                      <label>Produto</label>
+                      <input type="text" class="form-control mb-3" placeholder="Digite o nome">
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="col-lg-12">
+                      <label>Quantidade</label>
+                      <input type="text" class="form-control mb-3" placeholder="Digite o endereço">
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="col-lg-12">
+                      <label>Tipo de pagamento</label>
+                      <select class="form-control mb-3">
+                         <option>Dinheiro</option>
+                         <option>Débito</option>
+                         <option>Crédito</option>
+                         <option>V.R</option>
+                       </select>
+                   </div>
+                </div>
+
+                <div class="row">
+                   <div class="col-lg-12">
+                      <label>Valor</label>
+                      <input type="text" class="form-control mb-3" placeholder="Em reais">
+                   </div>
+                </div>
+             </div>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cadastrar</button>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+
+ <!-- MODAL ADICIONAR SAIDA -->
+ <div class="modal " id="modal-saida" tabindex="-1" role="dialog" aria-labelledby="modal-saidaLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+       <div class="modal-content">
+          <div class="modal-header">
+             <h5 class="modal-title" id="modal-saidaLabel">Adicionar saída</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button>
+          </div>
+          <div class="modal-body">
+             <div class="form-group">
+                <div class="row">
+                   <div class="col-lg-12">
+                      <label>Classificação</label>
+                      <select class="form-control">
+                         <option>Imposto A</option>
+                         <option>Imposto B</option>
+                       </select>
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="col-lg-12">
+                      <label>Valor</label>
+                      <input type="text" class="form-control mb-3" placeholder="Valor em reais">
+                   </div>
+                </div>
+
+             </div>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cadastrar</button>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+{% endblock %}

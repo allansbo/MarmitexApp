@@ -100,65 +100,75 @@
         {% if user.is_authenticated %}
         <nav class="menu">
             <ul class="menu-lista">
-                <li class="menu-grupo">
-                    <a class="menu-link" href="/">
+                <li class="menu-grupo" > 
+                    <a class="menu-link">
                         <span style="display: flex !important; justify-content: center !important;">
                             Sistema Marmite
                             <span class="material-icons">
                                 restaurant_menu
                             </span>
-                        </span>
+                    </span>
                     </a>
                 </li>
-                <li class="menu-grupo">
-                    <a href="#" class="menu-link active">
-                        <i class="fas fa-qrcode"></i>
-                        <span>Dashboard</span>
+
+                <li class="menu-grupo menu-link">      
+                    <span>Olá, {{ user.username }}</span>
                     </a>
+                 </li>
+                 
+                <li class="menu-grupo"> 
+                   <a href="/" class="menu-link active">
+                   <i class="fas fa-qrcode"></i>
+                   <span>Dashboard</span>
+                   </a>
+                </li>
+                <li class="menu-grupo">  <a href="/caixa" class="menu-link">
+                   <i class="fas fa-cash-register"></i>
+                   <span>Caixa</span>
+                   </a> 
                 </li>
                 <li class="menu-grupo">
+                   <a href="/clientes" class="menu-link">
+                   <i class="fas fa-user-friends"></i>
+                   <span>Clientes</span>
+                   </a>
+                </li>
+                <li class="menu-grupo">
+                   <a href="/produto" class="menu-link">
+                   <i class="fas fa-utensils"></i>
+                   <span>Produtos</span>
+                   </a>
+                </li>
+
+                <li class="menu-grupo">
+                    <a href="/pedido" class="menu-link">
+                    <i class="fas fa-wallet"></i>
+                    <span>Pedidos</span>
+                    </a>
+                 </li>
+
+                 <li class="menu-grupo">
                     <a href="#" class="menu-link">
-                        <i class="fas fa-cash-register"></i>
-                        <span>Caixa</span>
-                    </a>
-                </li>
-                <li class="menu-grupo dropdown">
                     <i class="fas fa-user-friends"></i>
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Clientes
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Relatórios</a>
-                            <a class="dropdown-item" href="#">Históricos</a>
-                            <a class="dropdown-item" href="#">CRUD</a>
-                        </div>
-                    <span>Clientes</span>
-                </li>
-                <li class="menu-grupo">
-                    <a href="#" class="menu-link">
-                        <i class="fas fa-utensils"></i>
-                        <span>Produtos</span>
+                    <span>Fornecedores</span>
                     </a>
-                </li>
-                <li class="menu-grupo">
-                    <a href="#" class="menu-link">
-                        <i class="fas fa-cogs"></i>
-                        <span>Configurações</span>
-                    </a>
+                 </li>
+                <li class="menu-grupo">    
+                   <a href="#" class="menu-link">
+                   <i class="fas fa-cogs"></i>
+                   <span>Configurações</span>
+                   </a>
                 </li>
                 {% else %}
-                <li class="menu-grupo">
-                    <a href="/accounts/login" class="menu-link">
-                        <i class="fas fa-cogs"></i>
-                        <span>Entrar</span>
-                    </a>
-                </li>
+
                 {% endif %}
                 {% if user.is_authenticated %}
+
+
                 <li class="menu-grupo">
-                    <p>Olá, {{ user.username }}</p>
+                    
                     <a href="/accounts/logout" class="menu-link">
-                        <i class="fas fa-cogs"></i>
+                        <i class="fas fa-arrow-circle-right"></i>
                         <span>Sair</span>
                     </a>
                 </li>

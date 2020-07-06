@@ -7,9 +7,16 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 offset-md-4">
-            <div class="card auth-card">
+            <div class="card auth-card" style="margin-top: 20%;">
                 <div class="card-body">
-                    <h4>Registro do Sistema</h4>
+                    <h4>
+                        <span style="display: flex !important; justify-content: center !important;">
+                       Registrar-se no Sistema Marmite
+                        <span class="material-icons">
+                            restaurant_menu
+                        </span>
+                        </span>
+                    </h4>
                     <form method="POST">
                         {% csrf_token %}
                         <input type="hidden" name="next" value="{{ next }}">
